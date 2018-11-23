@@ -1,9 +1,5 @@
-/*
-Basic input element using psuedo classes
-*/
-
 html {
-    font-family: 'Lora', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     width: 100%;
   }
   
@@ -14,8 +10,9 @@ html {
   }
   
   h1 {
-    font-size: 28px;
+    font-size: 72px;
     margin-bottom: 2.5%;
+    text-align: center;
   }
   
   input,
@@ -58,7 +55,7 @@ html {
     padding: 0;
     margin: 0;
     width: 10%;
-    border-top: 1px solid red;
+    border-top: 1px solid rgba(1, 80, 1, 0.815);
     -webkit-transition: width 0.4s ease;
     transition: width 0.4s ease;
     height: 0px;
@@ -155,4 +152,13 @@ html {
       opacity: 1;
     }
   }
-  
+
+
+input[type="button"] {
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+    background: rgba(1, 80, 1, 0.815);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    line-height: 36px;
+}  

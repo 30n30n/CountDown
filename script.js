@@ -4,6 +4,8 @@ var intervalHandle;
 // to reset page after countdown
 function resetPage() {
     document.getElementById("inputArea").style.display = "block";
+    // hide timer again
+    document.getElementById("time").style.display = 'none';
 }
 
 function tick() {
@@ -28,9 +30,13 @@ function tick() {
 }
 
 function startCountdown() {
+    // show timer
     document.getElementById("time").style.display = 'block';
+
     var minutes = document.getElementById("minutes").value;
     if (isNaN(minutes)) {
+        // hide timer again
+        document.getElementById("time").style.display = 'none';
         alert("Please enter a number!");
         return;
     }
@@ -62,5 +68,6 @@ window.onload =  function () {
     // add to the DOM, to the div called "inputArea"
     document.getElementById("inputArea").prepend(inputMinutes);
     document.getElementById("inputArea").appendChild(startButton);
+    // Hide timer on page load
     document.getElementById("time").style.display = 'none';
 };
