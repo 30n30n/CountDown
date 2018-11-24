@@ -34,9 +34,17 @@ function tick() {
     var message = min + ":" + sec;
     timeDisplay.innerHTML = message;
     
+    if (secondsRemaining <= 30) {
+        timeDisplay.style.color = "#ffc107";
+    }
+
+    if (secondsRemaining <= 10) {
+        timeDisplay.style.color = "#dc3545";
+    }
 
     if (secondsRemaining <= 0) {
         timeDisplay.innerHTML = "Finished.";
+        timeDisplay.style.color = "#28a745";
         
     }
 
