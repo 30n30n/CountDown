@@ -2,14 +2,6 @@
 var secondsRemaining;
 var intervalHandle;
 
-// to reset page after countdown
-function resetPage() {
-    document.getElementById("inputArea").style.display = "block";
-    // hide timer again
-    document.getElementById("time").style.display = 'none';
-    document.getElementById("resetButton").style.display = "none";
-}
-
 // to reset timer
 function resetTimer() {
     clearInterval(intervalHandle);
@@ -44,7 +36,7 @@ function tick() {
 
     if (secondsRemaining <= 0) {
         timeDisplay.innerHTML = "Finished.";
-        timeDisplay.style.color = "#28a745";
+        timeDisplay.style.color = "#343a40";
         
     }
 
