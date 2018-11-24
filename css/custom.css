@@ -114,7 +114,7 @@ html {
     transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
   }
   
-  input[type="submit"] {
+  input[type="button"] {
     -webkit-transition: opacity 0.2s ease, background 0.2s ease;
     transition: opacity 0.2s ease, background 0.2s ease;
     display: block;
@@ -124,20 +124,20 @@ html {
     cursor: pointer;
   }
   
-  input[type="submit"]:hover {
+  input[type="button"]:hover {
     background: #EEE;
   }
   
-  input[type="submit"]:active {
+  input[type="button"]:active {
     background: #999;
   }
   
-  input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
+  input.question:valid ~ input[type="button"], textarea.question:valid ~ input[type="button"] {
     -webkit-animation: appear 1s forwards;
     animation: appear 1s forwards;
   }
   
-  input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input[type="submit"] {
+  input.question:invalid ~ input[type="button"], textarea.question:invalid ~ input[type="button"] {
     display: none;
   }
   
@@ -152,13 +152,13 @@ html {
       opacity: 1;
     }
   }
-
-
-input[type="button"] {
-    font-family: 'Ubuntu', sans-serif;
-    border-radius: 5px;
-    background: rgba(1, 80, 1, 0.815);
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    line-height: 36px;
-}  
+  
+  
+  input[type="reset"] {
+    
+    display: block;
+    opacity: 1 !important;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+  } 

@@ -1,3 +1,4 @@
+// define global variales.
 var secondsRemaining;
 var intervalHandle;
 
@@ -6,7 +7,20 @@ function resetPage() {
     document.getElementById("inputArea").style.display = "block";
     // hide timer again
     document.getElementById("time").style.display = 'none';
+    document.getElementById("resetButton").style.display = "none";
 }
+
+// to reset timer
+function resetTimer() {
+    clearInterval(intervalHandle);
+    document.getElementById("inputArea").style.display = "block";
+    // hide timer again
+    document.getElementById("time").style.display = 'none';
+    document.getElementById("resetButton").style.display = "none";
+    
+}
+
+
 
 function tick() {
     var timeDisplay = document.getElementById("time");
@@ -20,10 +34,10 @@ function tick() {
     var message = min + ":" + sec;
     timeDisplay.innerHTML = message;
     
-    if (secondsRemaining === 0) {
-        alert("Done!");
-        clearInterval(intervalHandle);
-        resetPage();
+
+    if (secondsRemaining <= 0) {
+        timeDisplay.innerHTML = "Finished.";
+        
     }
 
     secondsRemaining--;
@@ -32,6 +46,8 @@ function tick() {
 function startCountdown() {
     // show timer
     document.getElementById("time").style.display = 'block';
+    document.getElementById("resetButton").style.display = "block";
+    document.getElementById("resetButton").style.opacity = "1";
 
     var minutes = document.getElementById("minutes").value;
     if (isNaN(minutes)) {
@@ -46,6 +62,8 @@ function startCountdown() {
     intervalHandle = setInterval(tick, 1000);
     // hide the form
     document.getElementById("inputArea").style.display = "none";
+    
+     
 }
 
 // typical window.onload , as soon as the page is loaded...
@@ -65,9 +83,23 @@ window.onload =  function () {
     startButton.onclick = function () {
         startCountdown();
     };
+
+     // reset button create.
+     var resetButton = document.createElement("input");
+     resetButton.setAttribute("type", "reset");
+     resetButton.setAttribute("value", "Reset timer");
+     resetButton.onclick = function () {
+         resetTimer();
+     };
+
+
     // add to the DOM, to the div called "inputArea"
     document.getElementById("inputArea").prepend(inputMinutes);
     document.getElementById("inputArea").appendChild(startButton);
-    // Hide timer on page load
+    document.getElementById("resetButton").appendChild(resetButton);
+    
+   
+    // Hide timer section on page load
     document.getElementById("time").style.display = 'none';
+    document.getElementById("resetButton").style.display = "none";
 };
